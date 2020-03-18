@@ -1,0 +1,16 @@
+.wrapper
+  = render  "header"
+  .top__content
+    .top__content--header
+      %h1
+        映画一覧
+    .top__content--main
+      .top__main-box
+        .top__main-h1
+          %i.fa.fa-chevron-right
+        .top__main-m1
+          %ul
+          - @movies.each do |movie|
+            = render partial: "movie", locals: { movie: movie }
+  -# フッターを呼び込み
+  = render "footer"
